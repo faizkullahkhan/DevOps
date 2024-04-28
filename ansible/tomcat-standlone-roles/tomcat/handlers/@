@@ -1,0 +1,6 @@
+---
+# handlers file for tomcat
+
+- name: Restart Tomcat Server
+  service: name: tomcat9 state: restarted
+
