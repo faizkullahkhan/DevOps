@@ -2,15 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        
+	stage('Pre-Build') { 
             steps {
-                sh 'javac Hello_world.java'
+                sh 'mvn -B -DskipTests clean package' 
             }
         }
-        stage('Run') {
-            steps {
-                sh 'java Hello_world'
-            }
-        }
+//	stage('Build') {
+  //          steps {
+		// Compile Java code
+    //            sh 'javac Hello_world.java'
+      //      }
+//        }
+//        stage('Run') {
+ //           steps {
+   //             sh 'java Hello_world'
+   //         }
+  //      }
     }
 }
